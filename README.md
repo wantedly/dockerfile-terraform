@@ -6,7 +6,7 @@ Please see [official document](https://terraform.io/docs/index.html) for more in
 
 * TBD
 
-## HOW TO USER
+## HOW TO USE
 
 TBD
 
