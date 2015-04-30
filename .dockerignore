@@ -1,0 +1,9 @@
+.git
+.gitignore
+README.md
+.env
+.env.sample
+docker-compose.yml
+script
+coreos
+*swp
