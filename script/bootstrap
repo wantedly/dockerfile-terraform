@@ -1,0 +1,45 @@
+#!/bin/bash
+#
+# bootstrap
+#
+# Get ready to use CoreOS clusters
+
+set -e
+
+#
+# Welcome Message
+#
+echo ""
+echo "  CoreOS Sandbox"
+echo ""
+
+#
+# Prepare coreos/.env
+#
+if test -f coreos/.env
+then
+  echo "  + coreos/.env found"
+else
+  echo "  + Creating coreos/.env"
+  cp coreos/.env.sample coreos/.env
+fi
+
+#
+# Install vagrant plugin
+#
+if [[ $(vagrant plugin list) =~ dotenv ]]
+then
+  echo "  + Vagrant plugin 'dotenv' found"
+else
+  echo "  + Installing vagrant plugin 'dotenv'..."
+  vagrant plugin install dotenv
+fi
+
+#
+# Startup instructions
+#
+echo ""
+echo "  Good work. We're ready"
+echo ""
+
+exit 0
