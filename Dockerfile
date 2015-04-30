@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Seigo Uchida <spesnova@gmail.com> (@spesnova)
+MAINTAINER Daisuke Fujita <dtanshi45@gmail.com> (@dtan4)
 
 ENV TERRAFORM_VERSION 0.4.2
 
