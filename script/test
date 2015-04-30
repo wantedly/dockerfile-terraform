@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Usage: script/test
+# Description: script to run test
+#
+
+# this script should be run in project root
+BASE_DIRECTORY=`pwd`
+TERRAFORM_VERSION="0.4.2"
+
+echo "==> Building target..."
+cd ${BASE_DIRECTORY}
+docker build -t quay.io/wantedly/terraform .
+
+echo "==> Running test..."
+docker run \
+  --rm \
+  --name terraform \
+  quay.io/wantedly/terraform:latest \
+  terraform version | \
+  grep -e $TERRAFORM_VERSION
+
+if [ $? -eq 0 ]
+then
+  echo "  Test passed"
+else
+  echo "  Test failed"
+  exit 1
+fi
+
+echo "==> Cleaning up..."
+docker kill terraform > /dev/null 2>&1 || true
+docker rm   terraform > /dev/null 2>&1 || true
