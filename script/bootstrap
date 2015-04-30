@@ -10,7 +10,7 @@ set -e
 # Welcome Message
 #
 echo ""
-echo "  CoreOS Sandbox"
+echo "  dockerfile-terraform"
 echo ""
 
 #
