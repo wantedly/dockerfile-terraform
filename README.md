@@ -11,7 +11,7 @@ Please see [official document](https://terraform.io/docs/index.html) for more in
 
 ```bash
 # Get the Docker image
-$ docker pull quay.io/wantedly/terraform
+$ docker pull quay.io/wantedly/terraform:latest
 
 # Prepare .tf files
 $ ls terraform
@@ -25,7 +25,7 @@ $ docker run \
     -e AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxx \
     -e AWS_DEFAULT_REGION=ap-northeast-1 \
     -v /path/to/terraform:/terraform \
-    quay.io/wantedly/terraform \
+    quay.io/wantedly/terraform:latest \
     terraform plan
 
 # Run `terraform apply`
@@ -36,7 +36,7 @@ $ docker run \
     -e AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxx \
     -e AWS_DEFAULT_REGION=ap-northeast-1 \
     -v /path/to/terraform:/terraform \
-    quay.io/wantedly/terraform \
+    quay.io/wantedly/terraform:latest \
     terraform apply
 ```
 
