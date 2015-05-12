@@ -6,7 +6,7 @@
 
 # this script should be run in project root
 BASE_DIRECTORY=`pwd`
-TERRAFORM_VERSION="0.4.2"
+TERRAFORM_VERSION="0.5.0"
 
 echo "==> Building target..."
 cd ${BASE_DIRECTORY}
