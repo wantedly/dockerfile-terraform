@@ -3,7 +3,8 @@ MAINTAINER Daisuke Fujita <dtanshi45@gmail.com> (@dtan4)
 
 ENV TERRAFORM_VERSION 0.5.0
 
-RUN mkdir -p /tmp/terraform && \
+RUN apk --update add ca-certificates && \
+    mkdir -p /tmp/terraform && \
     cd /tmp/terraform && \
     wget http://dl.bintray.com/mitchellh/terraform/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
       -O terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
