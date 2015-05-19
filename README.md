@@ -5,7 +5,7 @@ Please see [official document](https://terraform.io/docs/index.html) for more in
 ## SUPPORTED TAGS
 
 * `latest`
- * Terraform 0.4.2
+ * Terraform 0.5.0
 
 ## HOW TO USE
 
