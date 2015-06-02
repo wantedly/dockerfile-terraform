@@ -1,7 +1,7 @@
 FROM gliderlabs/alpine:3.1
 MAINTAINER Daisuke Fujita <dtanshi45@gmail.com> (@dtan4)
 
-ENV TERRAFORM_VERSION 0.5.0
+ENV TERRAFORM_VERSION 0.5.3
 
 RUN apk --update add ca-certificates && \
     mkdir -p /tmp/terraform && \
