@@ -16,4 +16,4 @@ RUN apk --update add ca-certificates && \
 VOLUME ["/terraform"]
 WORKDIR /terraform
 
-CMD ["terraform", "version"]
+CMD ["/usr/local/bin/terraform", "version"]
