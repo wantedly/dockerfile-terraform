@@ -2,7 +2,7 @@ FROM debian:jessie
 MAINTAINER Daisuke Fujita <dtanshi45@gmail.com> (@dtan4)
 CMD ["/usr/local/bin/terraform", "version"]
 
-ENV TERRAFORM_VERSION 0.5.3
+ENV TERRAFORM_VERSION 0.6.0
 
 RUN apt-get update \
     && apt-get install -y \
