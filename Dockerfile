@@ -1,23 +1,14 @@
-FROM debian:jessie
-MAINTAINER Daisuke Fujita <dtanshi45@gmail.com> (@dtan4)
-CMD ["/usr/local/bin/terraform", "version"]
+FROM alpine:3.2
 
 ENV TERRAFORM_VERSION 0.6.1
 
-RUN apt-get update \
-    && apt-get install -y \
-      libcurl4-openssl-dev \
-      unzip \
-      curl \
-    && mkdir -p /tmp/terraform \
-    && cd /tmp/terraform \
-    && curl -L https://dl.bintray.com/mitchellh/terraform/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > \
-      terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
-    && unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
-    && rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
-    && mv terraform* /usr/local/bin/ \
-    && rm -rf /tmp/terraform \
-    && apt-get purge -y curl unzip
+RUN apk add --update wget ca-certificates unzip && \
+    wget -q "https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64/glibc-2.21-r2.apk" && \
+    apk add --allow-untrusted glibc-2.21-r2.apk && \
+    wget -q -O /terraform.zip "https://dl.bintray.com/mitchellh/terraform/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
+    unzip /terraform.zip -d /bin && \
+    apk del --purge wget ca-certificates unzip && \
+    rm -rf /var/cache/apk/* glibc-2.21-r2.apk /terraform.zip
 
 VOLUME ["/terraform"]
 WORKDIR /terraform
