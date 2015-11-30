@@ -1,4 +1,7 @@
-# Terraform Docker Image [![Docker Repository on Quay.io](https://quay.io/repository/wantedly/terraform/status "Docker Repository on Quay.io")](https://quay.io/repository/wantedly/terraform)
+# Terraform Docker Image
+[![Build Status](https://travis-ci.org/wantedly/dockerfile-terraform.svg?branch=master)](https://travis-ci.org/wantedly/dockerfile-terraform)
+[![Docker Repository on Quay.io](https://quay.io/repository/wantedly/terraform/status "Docker Repository on Quay.io")](https://quay.io/repository/wantedly/terraform)
+
 Docker Image for [Terraform](https://terraform.io).
 Please see [official document](https://terraform.io/docs/index.html) for more information about Terraform.
 
