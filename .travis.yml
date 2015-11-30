@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker -v
+script:
+  - script/test
+notifications:
+  slack:
+    secure: AXSkMBWQkXMP0MsrCxIO/v9KT+vh3BvSFaooRNRmt7mAjSHMxuR+Mhtgx89DvIQtOumIloVh9gGRPIMdp9I/annmi8mpdtSXFIv5CQuhW5nEGrSZKauRIwTJJb3wktOoWaJ1r8dM0ItBWyYZKprETA7PhSrUZ2mSdiCgTZBtksE=
