@@ -4,9 +4,11 @@
 # Description: script to run test
 #
 
+set -e
+
 # this script should be run in project root
 BASE_DIRECTORY=`pwd`
-TERRAFORM_VERSION="0.6.6"
+TERRAFORM_VERSION="0.6.14"
 
 echo "==> Building target..."
 cd ${BASE_DIRECTORY}
@@ -18,7 +20,7 @@ docker run \
   --name terraform \
   quay.io/wantedly/terraform:latest \
   terraform version | \
-  grep -e $TERRAFORM_VERSION
+  grep -e "Terraform v$TERRAFORM_VERSION"
 
 if [ $? -eq 0 ]
 then
