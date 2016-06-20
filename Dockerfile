@@ -9,7 +9,7 @@ RUN apk add --no-cache --update ca-certificates unzip wget \
     && apk add --no-cache glibc-${GLIBC_VERSION}.apk \
     && wget -qO /terraform.zip "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" \
     && unzip /terraform.zip -d /bin \
-    && apk del --purge ca-certificates unzip wget \
+    && apk del --purge unzip wget \
     && rm -rf glibc-${GLIBC_VERSION}.apk /terraform.zip
 
 VOLUME ["/terraform"]
