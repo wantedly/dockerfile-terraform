@@ -8,7 +8,7 @@ Please see [official document](https://terraform.io/docs/index.html) for more in
 ## SUPPORTED TAGS
 
 * `latest`
- * Terraform 0.6.16
+ * Terraform 0.7.8
 
 ## HOW TO USE
 
