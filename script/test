@@ -8,7 +8,7 @@ set -e
 
 # this script should be run in project root
 BASE_DIRECTORY=`pwd`
-TERRAFORM_VERSION="0.7.8"
+TERRAFORM_VERSION="0.8.7"
 
 echo "==> Building target..."
 cd ${BASE_DIRECTORY}
